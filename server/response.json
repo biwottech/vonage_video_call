@@ -1,0 +1,208 @@
+[
+    {
+        "headers": {},
+        "uuid": "5a37ce05-1f5b-4c14-8d32-c3dbf739da38",
+        "network": "63902",
+        "duration": "0",
+        "start_time": null,
+        "rate": "0.00000000",
+        "price": "0.00000000",
+        "from": "Unknown",
+        "to": "254727143163",
+        "conversation_uuid": "CON-6286d5a8-da88-4c37-8c62-b5396beb37dd",
+        "status": "completed",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:39.217Z"
+    },
+    {
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "5a37ce05-1f5b-4c14-8d32-c3dbf739da38",
+        "conversation_uuid": "CON-6286d5a8-da88-4c37-8c62-b5396beb37dd",
+        "status": "busy",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:39.271Z"
+    },
+    {
+        "headers": {},
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "conversation_uuid": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "status": "ringing",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:43.633Z"
+    },
+    {
+        "headers": {},
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "conversation_uuid": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "status": "started",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:43.633Z"
+    },
+    {
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "5a37ce05-1f5b-4c14-8d32-c3dbf739da38",
+        "conversation_uuid": "CON-6286d5a8-da88-4c37-8c62-b5396beb37dd",
+        "status": "busy",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:39.271Z"
+    },
+    {
+        "headers": {},
+        "uuid": "5a37ce05-1f5b-4c14-8d32-c3dbf739da38",
+        "network": "63902",
+        "duration": "0",
+        "start_time": null,
+        "rate": "0.00000000",
+        "price": "0.00000000",
+        "from": "Unknown",
+        "to": "254727143163",
+        "conversation_uuid": "CON-6286d5a8-da88-4c37-8c62-b5396beb37dd",
+        "status": "completed",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:39.217Z"
+    },
+    {
+        "start_time": null,
+        "headers": {},
+        "rate": null,
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "conversation_uuid": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "status": "answered",
+        "direction": "outbound",
+        "network": null,
+        "timestamp": "2023-07-27T09:06:52.715Z"
+    },
+    {
+        "headers": {},
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "conversation_uuid": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "status": "ringing",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:43.633Z"
+    },
+    {
+        "headers": {},
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "conversation_uuid": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "status": "started",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:43.633Z"
+    },
+    {
+        "conversation_uuid_from": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "type": "transfer",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "conversation_uuid_to": "CON-0afd25ad-a2a1-4b25-8bc1-378f1ca41a69",
+        "timestamp": "2023-07-27T09:06:58.555361Z"
+    },
+    {
+        "start_time": "2023-07-27T09:06:58Z",
+        "recording_url": "https://api-us.nexmo.com/v1/files/1bf5465c-adbe-4500-8c9a-baa44c251b7e",
+        "size": 2141,
+        "recording_uuid": "4958fc69-1779-472f-b3d6-fe20d8300cc0",
+        "end_time": "2023-07-27T09:06:58Z",
+        "conversation_uuid": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "timestamp": "2023-07-27T09:06:58.812Z"
+    },
+    {
+        "reason": "Connection closed",
+        "original_request": {
+            "type": "event",
+            "url": "https://6372-105-160-21-253.ngrok-free.app/event"
+        },
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "5a37ce05-1f5b-4c14-8d32-c3dbf739da38",
+        "conversation_uuid": "CON-6286d5a8-da88-4c37-8c62-b5396beb37dd",
+        "status": "busy",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:39.271Z"
+    },
+    {
+        "start_time": null,
+        "headers": {},
+        "rate": null,
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "conversation_uuid": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "status": "answered",
+        "direction": "outbound",
+        "network": null,
+        "timestamp": "2023-07-27T09:06:52.715Z"
+    },
+    {
+        "conversation_uuid_from": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "type": "transfer",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "conversation_uuid_to": "CON-0afd25ad-a2a1-4b25-8bc1-378f1ca41a69",
+        "timestamp": "2023-07-27T09:06:58.555361Z"
+    },
+    {
+        "start_time": "2023-07-27T09:06:58Z",
+        "recording_url": "https://api-us.nexmo.com/v1/files/1bf5465c-adbe-4500-8c9a-baa44c251b7e",
+        "size": 2141,
+        "recording_uuid": "4958fc69-1779-472f-b3d6-fe20d8300cc0",
+        "end_time": "2023-07-27T09:06:58Z",
+        "conversation_uuid": "CON-8818f340-c522-4439-b563-17457b248b24",
+        "timestamp": "2023-07-27T09:06:58.812Z"
+    },
+    {
+        "reason": "Connection closed",
+        "original_request": {
+            "type": "event",
+            "url": "https://6372-105-160-21-253.ngrok-free.app/event"
+        },
+        "from": "447700900000",
+        "to": "254727143163",
+        "uuid": "5a37ce05-1f5b-4c14-8d32-c3dbf739da38",
+        "conversation_uuid": "CON-6286d5a8-da88-4c37-8c62-b5396beb37dd",
+        "status": "busy",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:06:39.271Z"
+    },
+    {
+        "headers": {},
+        "end_time": "2023-07-27T09:07:12.000Z",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "network": "63902",
+        "duration": "20",
+        "start_time": "2023-07-27T09:06:52.000Z",
+        "rate": "0.22800000",
+        "price": "0.07600000",
+        "from": "Unknown",
+        "to": "254727143163",
+        "conversation_uuid": "CON-0afd25ad-a2a1-4b25-8bc1-378f1ca41a69",
+        "status": "completed",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:07:13.469Z"
+    },
+    {
+        "headers": {},
+        "end_time": "2023-07-27T09:07:12.000Z",
+        "uuid": "815484e0-918c-4f96-8854-5aa46d9e7470",
+        "network": "63902",
+        "duration": "20",
+        "start_time": "2023-07-27T09:06:52.000Z",
+        "rate": "0.22800000",
+        "price": "0.07600000",
+        "from": "Unknown",
+        "to": "254727143163",
+        "conversation_uuid": "CON-0afd25ad-a2a1-4b25-8bc1-378f1ca41a69",
+        "status": "completed",
+        "direction": "outbound",
+        "timestamp": "2023-07-27T09:07:13.469Z"
+    }
+]
