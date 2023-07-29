@@ -1,13 +1,17 @@
 require("dotenv").config();
 const express = require("express");
+const axios = require("axios");
 const bodyParser = require("body-parser");
 const { Vonage } = require("@vonage/server-sdk");
+const Nexmo = require("nexmo");
 const WebSocket = require("ws");
 const cors = require("cors");
+const path = require("path");
 const VONAGE_NUMBER = process.env.VONAGE_NUMBER;
 const USER_PHONE_NUMBER = process.env.TO_NUMBER;
 const ANSWER_URL = process.env.ANSWER_WEBHOOK_URL;
 const RECORD_URL = process.env.RECORD_WEBHOOK_URL;
+const TRANSCRIPTION = process.env.TRANSCRIPTION_WEBHOOK_URL;
 const EVENT_URL = process.env.WEBHOOK_URL;
 const input_url = process.env.OUTPUT_WEBHOOK_URL;
 const PORT = process.env.PORT || 5000;
@@ -15,6 +19,16 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 const vonage = new Vonage(
+  {
+    apiKey: process.env.VONAGE_API_KEY,
+    apiSecret: process.env.VONAGE_API_SECRET,
+    applicationId: process.env.VONAGE_APPLICATION_ID,
+    privateKey: process.env.VONAGE_PRIVATE_KEY_PATH,
+  },
+  { debug: true }
+);
+
+const nexmo = new Nexmo(
   {
     apiKey: process.env.VONAGE_API_KEY,
     apiSecret: process.env.VONAGE_API_SECRET,
@@ -104,10 +118,16 @@ const onAnswer = (req, res) => {
       endOnSilence: "3",
       endOnKey: "#",
       beepStart: "true",
+      transcription: {
+        eventMethod: "POST",
+        eventUrl: [TRANSCRIPTION],
+        language: "en-US",
+        sentimentAnalysis: "true",
+      },
     },
     {
       action: "talk",
-      text: "D you have any more to say? Please leave your name and quick message after the tone, then press #.",
+      text: "D you have any more to say? Please leave your message, then press #.",
     },
     {
       action: "record",
@@ -115,6 +135,12 @@ const onAnswer = (req, res) => {
       endOnSilence: "3",
       endOnKey: "#",
       beepStart: "true",
+      transcription: {
+        eventMethod: "POST",
+        eventUrl: [TRANSCRIPTION],
+        language: "en-US",
+        sentimentAnalysis: "true",
+      },
     },
     {
       action: "talk",
@@ -124,17 +150,32 @@ const onAnswer = (req, res) => {
 };
 
 // recordning function
-const onRecording = () => {
-  let audioFileName = `vonage-${new Date().getTime()}.mp3`;
-  let audioFileLocalPath = `./recordings/${audioFileName}`;
-  nexmo.files.save(req.body.recording_url, audioFileLocalPath, (err, res) => {
-    if (err) {
-      console.log("Could not save audio file");
-      console.error(err);
-    } else {
-      uploadFile(audioFileLocalPath, audioFileName);
+const onRecording = (req, res) => {
+  let audioURL = req.body.recording_url;
+  let audioFile = audioURL.split("/").pop() + ".mp3";
+  const audioFilePath = path.join(__dirname, "recordings", audioFile);
+
+  nexmo.files.save(audioURL, audioFilePath, (err, response) => {
+    if (response) {
+      console.log("The audio is downloaded successfully!");
     }
   });
+  res.status(204).end();
+};
+
+const onTranscription = async (req, res) => {
+  console.log("transcription received:", req.body);
+  //  Using the transcription_url you can make a GET request to retrieve the transcription.
+  // You will need to authenticate with a JWT signed by the same application key that created the recording
+  const { transcription_url } = req.body;
+  const jwt = nexmo.generateJwt();
+  const options = {
+    headers: {
+      Authorization: `Bearer ${jwt}`,
+    },
+  };
+  const { data } = await axios.get(transcription_url, options);
+  console.log("transcription:", JSON.stringify(data, null, 2));
   return res.status(204).send("");
 };
 
@@ -176,7 +217,7 @@ app.post("/event", (req, res) => {
 });
 
 // Endpoint to handle Vonage answer webhook
-app.get("/answer", onAnswer).post("/record", onRecording);
+app.get("/answer", onAnswer).post("/record", onRecording).post("/transcription", onTranscription);
 
 // WebSocket connection handling
 wss.on("connection", (ws) => {
