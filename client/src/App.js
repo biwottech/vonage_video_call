@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
 
 function App() {
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:3000');
+    const ws = new WebSocket("ws://localhost:3000");
 
     ws.onopen = () => {
-      console.log('Connected to WebSocket');
+      console.log("Connected to WebSocket");
     };
 
     ws.onmessage = (event) => {
-      console.log('Received message:', event.data);
+      console.log("Received message:", event.data);
     };
 
     ws.onclose = () => {
-      console.log('WebSocket connection closed');
+      console.log("WebSocket connection closed");
     };
 
     return () => {
@@ -25,17 +25,17 @@ function App() {
 
   const handleMakeCall = () => {
     // Replace with the destination and caller phone numbers
-    const destinationNumber = 254727143163;
+    const destinationNumber = 254727354557;
     const callerId = 447700900000;
 
     const message = JSON.stringify({
-      type: 'makeCall',
+      type: "makeCall",
       destinationNumber,
       callerId,
     });
 
     // Send a message to the WebSocket server to make an outbound call
-    const ws = new WebSocket('ws://localhost:5000');
+    const ws = new WebSocket("ws://localhost:5000");
     ws.onopen = () => {
       ws.send(message);
     };
