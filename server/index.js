@@ -34,7 +34,6 @@ async function makeCall(to) {
             from: { type: 'phone', number: to },
             answer_url: [ANSWER_URL],
             event_url: [EVENT_URL],
-            machine_detection: 'continue'
         },
         (err, response) => {
             if (err) {

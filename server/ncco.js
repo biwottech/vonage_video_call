@@ -16,7 +16,7 @@ const record_ncco = () => {
                 {
                     "type": "phone",
                     "number": "447700900001"
-                }``
+                }
             ]
         }
     ];
@@ -38,7 +38,6 @@ const connect_fall_back_ncco = () => {
     // rejected - the call was rejected
     // unanswered - the call was not answered
     // busy - the person being called was on another call
-
     [
         {
             "action": "connect",
