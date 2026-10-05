@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/speech": "^5.6.0",
-    "@google-cloud/text-to-speech": "^4.2.3",
+    "@google-cloud/speech": "^8.1.1",
+    "@google-cloud/text-to-speech": "^7.1.1",
     "@vonage/server-sdk": "^3.6.0",
     "amqp": "^0.2.7",
     "body-parser": "^1.20.2",
